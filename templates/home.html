@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" content="width=device-width, initial-scale= 1">
+        <title>Home</title>
+        <style>
+            body,html{
+                /* Background image for webpage */
+                background: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: repeat;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /* .bg-image {
+                background-image: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg");
+                filter: blur(0.5px);
+                -webkit-filter: blur(0.5px);
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            } */
+            /* .form-all{
+                background: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg")no-repeat
+                top left;
+
+            } */
+
+            .column {
+                float: left;
+                width: 50%;
+            }
+
+            /* .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            } */
+
+            .row {
+                height: 65%;
+            }
+
+            .slider {
+                -webkit-appearance: none;
+                width: 70%;
+                height: 10px;
+                border-radius: 5px;   
+                background: antiquewhite;
+                outline: none;
+                opacity: 0.6;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%; 
+                background: #1eff00;
+                cursor: pointer;
+            }
+
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #4CAF50;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body text="antiquewhite"> 
+
+
+        <div class="row" style="height: auto;">
+            <div class="row" style="padding-top: 7%; height: auto;">
+                <h1 style="text-align: center; font-size: 350%;">Heart Disease Risk Calculator</h1>
+                <h3 style="text-align: center;">Our model would analyse the disease by 85% accuracy</h3>
+
+            </div>
+
+            <div class="row">
+                    <!-- <h1> Enter Your Details.. </h1> -->
+                    
+
+                <form action="result">
+
+
+                    <div class="column" style="padding: 5%; width: 35%; padding-left: 8%;">    
+                        <!-- <div class="column"> -->
+                            <p>Name: </p>
+                            <input type="text" name="name" style="text-transform: uppercase;" required>
+                            <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Age:  </p>
+                            <input type="number" min="25" max="100" name="age" id="age" required >     
+                            <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column">  -->
+                            <p>Sex: </p>
+                            <input type="radio" name="sex" value="Male">
+                            <label for="male">Male</label>
+                            <input type="radio" name="sex" value="Female">
+                            <label for="male">Female</label><br>
+                            <br>
+                            
+                        <!-- </div> -->
+                        
+                        <!-- <div class="column"> -->
+                            <label for="cp">Chest Pain Type:</label>
+                            <select name="cp" id="cp">
+                              <option value="typical angina">typical angina</option>
+                              <option value="atypical angina">atypical angina</option>
+                              <option value="non-anginal pain">non-anginal pain</option>
+                              <option value="asymptomatic">asymptomatic</option>
+                            </select>
+                         
+                          
+                            <!-- <p>Chest Pain Type: </p>
+                            <input type="text" name="cp">       
+                            <br> -->
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Resting Blood Pressure: </p>
+                            <input type="number" name="restbp">
+                            <br>
+                        <!-- </div> -->
+
+    
+                    </div>
+
+                    <div class="column" style="padding: 5%; width: 33%; padding-left: 2%;">
+                        <!-- <div class="column"> -->
+                            <p>Serum Cholestoral in mg/dl: </p>
+                            <input type="number" name="chol">
+                            <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                        <p>Fasting Blood Sugar > 120mg/dl: 
+                        <input type="radio" name="fbs" value="yes">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="fbs" value="no">
+                        <label for="no">No</label> </p>
+                        
+                        <!-- </div> -->
+   
+                        <!-- <div class="column"> -->
+                        <p><label for="restecg">Resting Electrocardiographic Results (values 0,1,2): </label>
+                        <select name="restecg" id="restecg">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> </p>
+                       
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                        <p>Maximum Heart Rate Achieved: </p>
+                        <input type="number" name="maxhr">
+                        <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Exercise Induced Angina : 
+                            <input type="radio" name="exang" value="yes">
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="exang" value="no">
+                            <label for="no">No</label> </p>
+                            
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                            <p>ST Depression Induced by Exercise Relative to Rest: </p>
+                            <input type="number" name="oldpeak">
+                            <br>
+                        <!-- </div> -->
+                
+                    </div>
+
+                    <div class="column" style="padding: 5%; width: 30%; padding-left: 0%;">
+                        <!-- <div class="column"> -->
+                        <p><label for="slope">The Slope of the Peak Exercise ST Segment: </label>
+                        <select name="slope" id="slope">
+                        <option value="upsloping">upsloping</option>
+                        <option value="flat">flat</option>
+                        <option value="down sloping">down sloping</option>
+                        </select> </p>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                        <p><label for="ca">Number of Major Vessels (0-3) Colored by Flourosopy: </label>
+                        <select name="ca" id="ca">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select> </p>
+                        <br>
+                        <!-- </div> -->
+      
+                        <!-- <div class="column"> -->
+                        <p><label for="thal">thal: (3 = Normal; 6 = Fixed Defect; 7 = Reversable Defect): </label>
+                        <select name="thal" id="thal">
+                        <option value="0">Unknown</option>
+                        <option value="1">Normal</option>
+                        <option value="2">Fixed Defect</option>
+                        <option value="3">Reversable Defect</option>
+                        </select> </p>
+                        <br>
+                        <!-- </div> -->
+       
+                        <!-- <div class="column"> -->
+                            <br><br><br><br>
+                        <input type="submit" value="Get Analysis" >
+                        <br>
+                        <!-- </div> -->
+                    </div>
+
+                    
+    
+                </form>
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

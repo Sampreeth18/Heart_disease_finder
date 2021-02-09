@@ -1,0 +1,181 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" content="width=device-width, initial-scale= 1">
+        <title>Home</title>
+        <style>
+            body,html{
+                background: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: repeat;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /* .bg-image {
+                background-image: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg");
+                filter: blur(0.5px);
+                -webkit-filter: blur(0.5px);
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            } */
+            /* .form-all{
+                background: url("https://healthitanalytics.com/images/site/article_headers/_large/GettyImages-1094058356.jpg")no-repeat
+                top left;
+
+            } */
+
+            .column {
+                float: left;
+                width: 50%;
+            }
+
+            /* .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            } */
+
+            .row {
+                height: 65%;
+            }
+
+        </style>
+    </head>
+    <body text="antiquewhite"> 
+
+
+        <div class="row" style="height: auto;">
+            <div class="row" style="padding-top: 7%; height: auto;">
+                <h1 style="text-align: center; font-size: 350%;">Heart Disease Risk Calculator</h1>
+                <h3 style="text-align: center;">Our model would analyse the disease by 70% accuracy</h3>
+
+                <!-- <link rel="stylesheet" href="{%static 'heart_disease_finder/home.css'%}"> -->
+                <!-- <img style="width: 700px;" src="{%static 'heart.jpg'%}" alt="image"> -->
+            </div>
+
+            <div class="row">
+                    <!-- <h1> Enter Your Details.. </h1> -->
+                    
+                <form       >
+                    {% csrf_token %}
+
+                    <div class="column" style="padding: 5%; width: 35%; padding-left: 8%;">    
+                        <!-- <div class="column"> -->
+                            <p>Age:  </p>
+                            <input type="range"  name="age" >     
+                            <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column">  -->
+                            <div class="dropdown">
+                                <button class="dropbtn">Sex</button>
+                                <div class="dropdown-content">
+                                    <a href="">Male</a>
+                                    <a href="">Female</a>
+                                </div>
+                                <!-- <p>Sex: </p>
+                                <input type="text" name="sex"> -->
+                                <br>
+                            </div>
+                        <!-- </div> -->
+                        
+                        <!-- <div class="column"> -->
+                            <p>Chest Pain Type: 
+                            <input type="text" name="cp">       </p>
+                            <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Resting Blood Pressure: </p>
+                            <input type="text" name="restbp">
+                            <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Serum Cholestoral in mg/dl: </p>
+                            <input type="text" name="chol">
+                            <br>
+                        <!-- </div> -->
+    
+                    </div>
+
+                    <div class="column" style="padding: 5%; width: 33%; padding-left: 2%;">
+                        <!-- <div class="column"> -->
+                        <p>Fasting Blood Sugar > 120mg/dl: </p>
+                        <input type="text" name="fbs">
+                        <br>
+                        <!-- </div> -->
+    
+                        <!-- <div class="column"> -->
+                        <p>Resting Electrocardiographic Results (values 0,1,2): </p>
+                        <input type="text" name="restecg">
+                        <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                        <p>Maximum Heart Rate Achieved: </p>
+                        <input type="text" name="maxhr">
+                        <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                            <p>Exercise Induced Angina : </p>
+                            <input type="text" name="exang">
+                            <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                            <p>ST Depression Induced by Exercise Relative to Rest: </p>
+                            <input type="text" name="oldpeak">
+                            <br>
+                        <!-- </div> -->
+                
+                    </div>
+
+                    <div class="column" style="padding: 5%; width: 30%; padding-left: 0%;">
+                        <!-- <div class="column"> -->
+                        <p>The Slope of the Peak Exercise ST Segment: </p>
+                        <input type="text" name="slope">
+                        <br>
+                        <!-- </div> -->
+
+                        <!-- <div class="column"> -->
+                        <p>Number of Major Vessels (0-3) Colored by Flourosopy: </p>
+                        <input type="text" name="ca">
+                        <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                        <p>thal: (3 = Normal; 6 = Fixed Defect; 7 = Reversable Defect): </p>
+                        <input type="text" name="thal">
+                        <br>
+                        <!-- </div> -->
+        
+                        <!-- <div class="column"> -->
+                            <br><br><br><br>
+                        <input type="submit" value="Get Analysis">
+                        <br>
+                        <!-- </div> -->
+                    </div>
+
+                    
+    
+                </form>
+
+            </div>
+        </div>
+
+        <!-- <div class="bg-image"></div> -->
+
+    </body>
+</html>
